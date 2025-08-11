@@ -136,3 +136,4 @@ C:\Users\HP\Desktop\DotNetPratice\BackEndAPI\StudentAPI\StudentAPICrud\obj\Debug
 C:\Users\HP\Desktop\DotNetPratice\BackEndAPI\StudentAPI\StudentAPICrud\obj\Debug\net6.0\staticwebassets.build.endpoints.json
 C:\Users\HP\Desktop\DotNetPratice\BackEndAPI\StudentAPI\StudentAPICrud\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
 C:\Users\HP\Desktop\DotNetPratice\BackEndAPI\StudentAPI\StudentAPICrud\obj\Debug\net6.0\StudentA.3F75690A.Up2Date
+C:\Users\HP\Desktop\DotNetPratice\BackEndAPI\StudentAPI\StudentAPICrud\obj\Debug\net6.0\StudentAPICrud.sourcelink.json
