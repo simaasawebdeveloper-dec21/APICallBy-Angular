@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StudentAPICrud")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+221c9994af483ce7a0b10217d8a032beea102360")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8de98c0c440aab08fc31958aa6add32a5c0163e")]
 [assembly: System.Reflection.AssemblyProductAttribute("StudentAPICrud")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StudentAPICrud")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
