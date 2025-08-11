@@ -1,0 +1,117 @@
+<div class="container-fluid">
+    <div class="row p-2 bg-info">
+        <div class="col-6">
+            <h3>Student List</h3>
+        </div>
+        <div class="col-6 text-end">
+            <button class="btn btn-warning" (click)="openModel()">Add Student</button>
+        </div>
+    </div>
+    @if (studentList && studentList.length > 0) {
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+
+                <th>Name</th>
+                <th>Course</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of studentList; track $index) {
+            <tr>
+                <td>{{ item.stname}}</td>
+                <td>{{ item.course }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.age }}</td>
+
+                <td class="text-center">
+                    <button class="btn btn-primary" (click)="onEdit(item)"> Edit</button> ||
+                    <button class="btn btn-danger " (click)="onDelete(item)"> Delete</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    }@else {
+    <h5 class="text-center p-5">Student Not Found</h5>
+    }
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal" #myModal>
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header bg-info">
+                @if(studentForm.value.id != 0)
+                {
+                <h4 class="modal-title">Update Student</h4>
+                }@else
+                {
+                <h4 class="modal-title">Add Student</h4>
+                }
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" (click)='closeModal()'></button>
+            </div>
+            <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="text" formControlName="stname" name="name" class="form-control"
+                                placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <input type="text" formControlName="course" name="course" class="form-control"
+                                placeholder="course">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" formControlName="email" name="Email" class="form-control"
+                                placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <input type="text" formControlName="age" name="age" class="form-control" placeholder="age">
+                        </div>
+
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="form-group form-check">
+                                <input type="checkbox" name="name" class="form-check-input" placeholder="Name">
+                                <label>Active?</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <!-- <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                        (click)='closeModal()'>Save</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                        (click)='closeModal()'>Close</button>
+                </div> -->
+                <div class="modal-footer">
+                    @if(studentForm.value.id == 0)
+                    {
+                    <button type="submit" [disabled]="this.studentForm.invalid" class="btn btn-primary">Save</button>
+                    }@else
+                    {
+                    <button type="submit" [disabled]="this.studentForm.invalid" class="btn btn-primary">Update</button>
+                    }
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                        (click)="closeModal()">Close</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
